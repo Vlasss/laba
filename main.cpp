@@ -10,6 +10,8 @@ void menu()
 	cout << "5) Добавление звезды" << endl;
 	cout << "6) Удаление планеты" << endl;
 	cout << "7) Удаление звезды" << endl;
+	cout << "8) Поиск планеты" << endl;
+	cout << "9) Поиск звезды" << endl;
 	cout << "0) Выход из программы" << endl;
 	cin >> num;
 }
@@ -136,27 +138,58 @@ int main(int argc, char* argv[])
 			system("cls");
 			menu();
 			break;
+		case 8:
+			system("cls");
+			if (sizeP != 0)
+			{
+				PoiskP(dp, sizeP);
+			}
+			else
+			{
+				cout << "Планеты нет " << endl;
+			}
+			system("pause");
+			system("cls");
+			menu();
+			break;
+		case 9:
+			system("cls");
+			if (sizeS != 0)
+			{
+				PoiskS(ds, sizeS);
+			}
+			else
+			{
+				cout << "Звезды нет " << endl;
+			}
+			system("pause");
+			system("cls");
+			menu();
+			break;
+
 		}
 	}
 	if (num == 0)
 	{
 		system("clear");
-		ofstream f1(argv[1], ios_base::trunc);
-		ofstream f2(argv[2], ios_base::trunc);
+		ofstream f1(argv[1], ofstream::app);
+		ofstream f2(argv[2], ofstream::app);
+		Systema* dp2 = new Systema[sizeP];
+		Systema* ds2 = new Systema[sizeS];
+		Copy(dp2, dp, sizeP);
+		Copy(ds2, ds, sizeS);
 		for (int i = 0; i < sizeS; i++)
 		{
-			f1 << ds[i].star;
+			f1 << ds2[i].star;
 		}
 		for (int i = 0; i < sizeP; i++)
 		{
-			f2 << dp[i].planet;
+			f2 << dp2[i].planet;
 		}
 		f1.close();
 		f2.close();
 
 		return 0;
 	}
-
-
 
 }

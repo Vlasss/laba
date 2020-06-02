@@ -10,4 +10,4 @@ systema.o: systema.cpp
 	g++ -c -o systema.o systema.cpp
 
 laba: function.o main.o systema.o
-	g++ function.o main.o systema.o laba
+	g++ function.o main.o systema.o -î laba
