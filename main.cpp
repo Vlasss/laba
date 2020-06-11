@@ -10,11 +10,16 @@ void menu()
 	cout << "5) Добавление звезды" << endl;
 	cout << "6) Удаление планеты" << endl;
 	cout << "7) Удаление звезды" << endl;
-	cout << "8) Поиск планеты" << endl;
-	cout << "9) Поиск звезды" << endl;
-	cout << "0) Выход из программы" << endl;
+	cout << "8) Поиск планеты по возрасту" << endl;
+	cout << "9) Поиск звезды по возрасту" << endl;
+	cout << "10) Поиск звезды по массе" << endl;
+	cout << "11) Поиск планеты по массе" << endl;
+	cout << "12) Поиск звезды по светимости" << endl;
+	cout << "0) Выход из программы (обязательно)" << endl;
 	cin >> num;
 }
+
+
 int main(int argc, char* argv[])
 {
 	if (argc <= 2) {
@@ -22,26 +27,51 @@ int main(int argc, char* argv[])
 		return 0;
 	}
 
-	ifstream BaseP(argv[1]);
-	ifstream BaseS(argv[2]);
-	if (!BaseP.is_open())
+	ifstream f1(argv[1]);
+	ifstream f2(argv[2]);
+	if (!f1.is_open())
 	{
 		cout << "ошибка";
 		return 0;
 	}
-	if (!BaseS.is_open())
+	if (!f2.is_open())
 	{
 		cout << "ошибка";
 		return 0;
 	}
-	
 
 	setlocale(LC_ALL, "ru");
 	menu();
-	int sizeS = 0;
-	int sizeP = 0;
+	int sizeS, sizeP;
+
+	if (f1.peek() == EOF)
+	{
+		sizeS = 0;
+	}
+	if (f2.peek() == EOF)
+	{
+		sizeP = 0;
+	}
+
+	f1 >> sizeS;
+	f2 >> sizeP;
+
+
 	Systema* ds = new Systema[sizeS];
 	Systema* dp = new Systema[sizeP];
+
+	for (int i = 0; i < sizeS; i++)
+	{
+		f1 >> ds[i].star;
+	}
+	for (int i = 0; i < sizeP; i++)
+	{
+		f2 >> dp[i].planet;
+	}
+
+	f1.close();
+	f2.close();
+
 
 	while (num != 0)
 	{
@@ -142,11 +172,11 @@ int main(int argc, char* argv[])
 			system("cls");
 			if (sizeP != 0)
 			{
-				PoiskP(dp, sizeP);
+				PPoiskAge(dp, sizeP);
 			}
 			else
 			{
-				cout << "Планеты нет " << endl;
+				cout << "Планет нет " << endl;
 			}
 			system("pause");
 			system("cls");
@@ -156,28 +186,70 @@ int main(int argc, char* argv[])
 			system("cls");
 			if (sizeS != 0)
 			{
-				PoiskS(ds, sizeS);
+				SPoiskAge(ds, sizeS);
 			}
 			else
 			{
-				cout << "Звезды нет " << endl;
+				cout << "Звезд нет " << endl;
 			}
 			system("pause");
 			system("cls");
 			menu();
 			break;
-
+		case 10:
+			system("cls");
+			if (sizeS != 0)
+			{
+				SPoiskWeight(ds, sizeS);
+			}
+			else
+			{
+				cout << "Звезд нет " << endl;
+			}
+			system("pause");
+			system("cls");
+			menu();
+			break;
+		case 11:
+			if (sizeS != 0)
+			{
+				PPoiskWeight(dp, sizeP);
+			}
+			else
+			{
+				cout << "Планет нет " << endl;
+			}
+			system("pause");
+			system("cls");
+			menu();
+			break;
+		case 12:
+			system("cls");
+			if (sizeS != 0)
+			{
+				SPoiskLuminosity(ds, sizeS);
+			}
+			else
+			{
+				cout << "Звезд нет " << endl;
+			}
+			system("pause");
+			system("cls");
+			menu();
+			break;
 		}
 	}
 	if (num == 0)
 	{
 		system("clear");
-		ofstream f1(argv[1], ofstream::app);
-		ofstream f2(argv[2], ofstream::app);
+		ofstream f1(argv[1], ios_base::trunc);
+		ofstream f2(argv[2], ios_base::trunc);
 		Systema* dp2 = new Systema[sizeP];
 		Systema* ds2 = new Systema[sizeS];
 		Copy(dp2, dp, sizeP);
 		Copy(ds2, ds, sizeS);
+		f1 << sizeS << " ";
+		f2 << sizeP << " ";
 		for (int i = 0; i < sizeS; i++)
 		{
 			f1 << ds2[i].star;
@@ -191,5 +263,4 @@ int main(int argc, char* argv[])
 
 		return 0;
 	}
-
 }

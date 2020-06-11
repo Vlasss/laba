@@ -1,4 +1,4 @@
-﻿#include "systema.h"
+#include "systema.h"
 Systema::Systema()
 {
 	star.age = 0;
@@ -30,11 +30,11 @@ Systema::~Systema()
 
 void Systema::PrintP()
 {
-	cout << "Название планеты: " << planet.name << " " << " Вес: " << planet.weight << " " << " Возраст " << planet.age << endl;
+	cout << "�������� �������: " << planet.name << " " << " ���: " << planet.weight << " " << " ������� " << planet.age << endl;
 }
 void Systema::PrintS()
 {
-	cout << "Название звезды: " << star.name << " " << " Вес: " << star.weight << " " << " Возраст: " << star.age << " " << " Светимость: " << star.luminosity << endl;
+	cout << "�������� ������: " << star.name << " " << " ���: " << star.weight << " " << " �������: " << star.age << " " << " ����������: " << star.luminosity << endl;
 }
 
 void Systema::InputS(Stars star_)
@@ -65,9 +65,6 @@ Systema& Systema::operator=(Systema OldData)
 }
 
 
-
-
-
 istream& operator >>(istream& in, Stars& star)
 {
 	in >> star.name;
@@ -78,10 +75,10 @@ istream& operator >>(istream& in, Stars& star)
 }
 ostream& operator <<(ostream& out, const Stars& star)
 {
-	out << "название звезды: " << star.name << " ";
-	out << "возраст: " << star.age << " ";
-	out << "светимость: " << star.luminosity << " ";
-	out << "вес: " << star.weight << " ";
+	out << star.name << " ";
+	out << star.age << " ";
+	out << star.luminosity << " ";
+	out << star.weight << " ";
 	out << endl;
 	return out;
 }
@@ -94,9 +91,9 @@ istream& operator >>(istream& in, Planets& planet)
 }
 ostream& operator <<(ostream& out, const Planets& planet)
 {
-	out <<"название планеты: " << planet.name << " ";
-	out <<"возраст: "<< planet.age << " ";
-	out <<"вес: " << planet.weight << " ";
-  out<<endl;
+	out << planet.name << " ";
+	out << planet.age << " ";
+	out << planet.weight << " ";
+	out << endl;
 	return out;
 }

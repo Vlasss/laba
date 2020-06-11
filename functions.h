@@ -11,5 +11,10 @@ void AddStar(Systema* (&ds), int& n);
 void AddPlanet(Systema* (&dp), int& n);
 void DeleteP(Systema* (&dp), int& n);
 void DeleteS(Systema* (&ds), int& n);
-void PoiskP(Systema* dp, int n);
-void PoiskS(Systema* ds, int n);
+void SPoiskLuminosity(Systema* ds, int n);
+void SPoiskWeight(Systema* ds, int n);
+void PPoiskWeight(Systema* dp, int n);
+void SPoiskAge(Systema* ds, int n);
+void PPoiskAge(Systema* dp, int n);
+
+
