@@ -1,5 +1,6 @@
 #include "functions.h"
 
+
 void Copy(Systema* NewData, Systema* OldData, int n)
 {
 	for (int i = 0; i < n; i++)
@@ -13,7 +14,7 @@ void PrintP(Systema* dp, int n)
 {
 	for (int i = 0; i < n; i++)
 	{
-		cout << "Ïëàíåòà ¹ " << i + 1 << endl;
+		cout << "ÐŸÐ»Ð°Ð½ÐµÑ‚Ð° â„– " << i + 1 << endl;
 		dp[i].PrintP();
 		cout << "-------------------------------" << endl;
 	}
@@ -22,7 +23,7 @@ void PrintS(Systema* ds, int n)
 {
 	for (int i = 0; i < n; i++)
 	{
-		cout << "Çâåçäà ¹ " << i + 1 << endl;
+		cout << "Ð—Ð²ÐµÐ·Ð´Ð° â„– " << i + 1 << endl;
 		ds[i].PrintS();
 		cout << "-------------------------------" << endl;
 	}
@@ -32,44 +33,44 @@ void ChangeP(Systema* dp, int n)
 {
 	Planets planet;
 	int np;
-	cout << "Ââåäèòå íîìåð íóæíîé ïëàíåòû: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð½ÑƒÐ¶Ð½Ð¾Ð¹ Ð¿Ð»Ð°Ð½ÐµÑ‚Ñ‹: ";
 	cin >> np;
 	np--;
 	if (np >= 0 && np < n)
 	{
-		cout << "Ââåäèòå íîâîå èìÿ ïëàíåòû" << endl;
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²Ð¾Ðµ Ð¸Ð¼Ñ Ð¿Ð»Ð°Ð½ÐµÑ‚Ñ‹" << endl;
 		cin >> planet.name;
-		cout << "Ââåäèòå íîâûé âîçðàñò ïëàíåòû" << endl;
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²Ñ‹Ð¹ Ð²Ð¾Ð·Ñ€Ð°ÑÑ‚ Ð¿Ð»Ð°Ð½ÐµÑ‚Ñ‹" << endl;
 		cin >> planet.age;
-		cout << "Ââåäèòå íîâóþ ìàññó ïëàíåòû" << endl;
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²ÑƒÑŽ Ð¼Ð°ÑÑÑƒ Ð¿Ð»Ð°Ð½ÐµÑ‚Ñ‹" << endl;
 		cin >> planet.weight;
 		dp[np].InputP(planet);
 	}
 	else
-		cout << "íîìåð ââåäåí íåâåðíî" << endl;
+		cout << "Ð½Ð¾Ð¼ÐµÑ€ Ð²Ð²ÐµÐ´ÐµÐ½ Ð½ÐµÐ²ÐµÑ€Ð½Ð¾" << endl;
 }
 
 void ChangeS(Systema* ds, int n)
 {
 	Stars star;
 	int ns;
-	cout << "Ââåäèòå íîìåð íóæíîé çâåçäû: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð½ÑƒÐ¶Ð½Ð¾Ð¹ Ð·Ð²ÐµÐ·Ð´Ñ‹: ";
 	cin >> ns;
 	ns--;
 	if (ns >= 0 && ns < n)
 	{
-		cout << "Ââåäèòå íîâîå èìÿ çâåçäû" << endl;
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²Ð¾Ðµ Ð¸Ð¼Ñ Ð·Ð²ÐµÐ·Ð´Ñ‹" << endl;
 		cin >> star.name;
-		cout << "Ââåäèòå íîâûé âîçðàñò çâåçäû" << endl;
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²Ñ‹Ð¹ Ð²Ð¾Ð·Ñ€Ð°ÑÑ‚ Ð·Ð²ÐµÐ·Ð´Ñ‹" << endl;
 		cin >> star.age;
-		cout << "Ââåäèòå íîâóþ ìàññó çâåçäû" << endl;
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²ÑƒÑŽ Ð¼Ð°ÑÑÑƒ Ð·Ð²ÐµÐ·Ð´Ñ‹" << endl;
 		cin >> star.weight;
-		cout << "Ââåäèòå íîâóþ ñâåòèñìîñòü çâåçäû" << endl;
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²ÑƒÑŽ ÑÐ²ÐµÑ‚Ð¸ÑÐ¼Ð¾ÑÑ‚ÑŒ Ð·Ð²ÐµÐ·Ð´Ñ‹" << endl;
 		cin >> star.luminosity;
 		ds[ns].InputS(star);
 	}
 	else
-		cout << "íîìåð ââåäåí íåâåðíî" << endl;
+		cout << "Ð½Ð¾Ð¼ÐµÑ€ Ð²Ð²ÐµÐ´ÐµÐ½ Ð½ÐµÐ²ÐµÑ€Ð½Ð¾" << endl;
 }
 
 void AddStar(Systema* (&ds), int& n)
@@ -82,13 +83,13 @@ void AddStar(Systema* (&ds), int& n)
 	ds = new Systema[new_k];
 	Copy(ds, ds2, k);
 
-	cout << "Ââåäèòå íîâîå èìÿ çâåçäû" << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²Ð¾Ðµ Ð¸Ð¼Ñ Ð·Ð²ÐµÐ·Ð´Ñ‹" << endl;
 	cin >> star.name;
-	cout << "Ââåäèòå íîâûé âîçðàñò çâåçäû" << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²Ñ‹Ð¹ Ð²Ð¾Ð·Ñ€Ð°ÑÑ‚ Ð·Ð²ÐµÐ·Ð´Ñ‹" << endl;
 	cin >> star.age;
-	cout << "Ââåäèòå íîâóþ ìàññó çâåçäû" << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²ÑƒÑŽ Ð¼Ð°ÑÑÑƒ Ð·Ð²ÐµÐ·Ð´Ñ‹" << endl;
 	cin >> star.weight;
-	cout << "Ââåäèòå íîâóþ ñâåòèñìîñòü çâåçäû" << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²ÑƒÑŽ ÑÐ²ÐµÑ‚Ð¸ÑÐ¼Ð¾ÑÑ‚ÑŒ Ð·Ð²ÐµÐ·Ð´Ñ‹" << endl;
 	cin >> star.luminosity;
 	ds[k].InputS(star);
 	delete[] ds2;
@@ -104,11 +105,11 @@ void AddPlanet(Systema* (&dp), int& n)
 	dp = new Systema[new_k];
 	Copy(dp, dp2, k);
 
-	cout << "Ââåäèòå íîâîå èìÿ ïëàíåòû" << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²Ð¾Ðµ Ð¸Ð¼Ñ Ð¿Ð»Ð°Ð½ÐµÑ‚Ñ‹" << endl;
 	cin >> planet.name;
-	cout << "Ââåäèòå íîâûé âîçðàñò ïëàíåòû" << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²Ñ‹Ð¹ Ð²Ð¾Ð·Ñ€Ð°ÑÑ‚ Ð¿Ð»Ð°Ð½ÐµÑ‚Ñ‹" << endl;
 	cin >> planet.age;
-	cout << "Ââåäèòå íîâóþ ìàññó ïëàíåòû" << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²ÑƒÑŽ Ð¼Ð°ÑÑÑƒ Ð¿Ð»Ð°Ð½ÐµÑ‚Ñ‹" << endl;
 	cin >> planet.weight;
 	dp[k].InputP(planet);
 	delete[] dp2;
@@ -120,7 +121,7 @@ void DeleteP(Systema* (&dp), int& n)
 {
 	int k;
 	Systema* dp2 = new Systema[n];
-	cout << "Ââåäèòå íîìåð ïëàíåòû" << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð¿Ð»Ð°Ð½ÐµÑ‚Ñ‹" << endl;
 	cin >> k;
 	k--;
 	if (k >= 0 && k < n)
@@ -140,14 +141,14 @@ void DeleteP(Systema* (&dp), int& n)
 
 	}
 	else
-		cout << "íîìåð ââåäåí íåâåðíî" << endl;
+		cout << "Ð½Ð¾Ð¼ÐµÑ€ Ð²Ð²ÐµÐ´ÐµÐ½ Ð½ÐµÐ²ÐµÑ€Ð½Ð¾" << endl;
 	delete[] dp2;
 }
 void DeleteS(Systema* (&ds), int& n)
 {
 	int k;
 	Systema* ds2 = new Systema[n];
-	cout << "Ââåäèòå íîìåð ïëàíåòû" << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð¿Ð»Ð°Ð½ÐµÑ‚Ñ‹" << endl;
 	cin >> k;
 	k--;
 	if (k >= 0 && k < n)
@@ -167,7 +168,7 @@ void DeleteS(Systema* (&ds), int& n)
 
 	}
 	else
-		cout << "íîìåð ââåäåí íåâåðíî" << endl;
+		cout << "Ð½Ð¾Ð¼ÐµÑ€ Ð²Ð²ÐµÐ´ÐµÐ½ Ð½ÐµÐ²ÐµÑ€Ð½Ð¾" << endl;
 	delete[] ds2;
 }
 
@@ -175,16 +176,16 @@ void PPoiskAge(Systema* dp, int n)
 {
 	Planets planet;
 
-	cout << "Ââåäèòå äàííûå ïëàíåòû: " << endl;
-	cout << "Ââåäèòå  âîçðàñò ïëàíåòû" << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð¿Ð»Ð°Ð½ÐµÑ‚Ñ‹: " << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ  Ð²Ð¾Ð·Ñ€Ð°ÑÑ‚ Ð¿Ð»Ð°Ð½ÐµÑ‚Ñ‹" << endl;
 	cin >> planet.age;
 	for (int i = 0; i < n; i++)
 	{
 		if (dp[i].planet.age == planet.age)
 		{
-			cout << "Íàçâàíèå ïëàíåòû:" << dp[i].planet.name << endl;
-			cout << "Âîçðàñò:" << dp[i].planet.age << endl;
-			cout << "Âåñ:" << dp[i].planet.weight << endl;
+			cout << "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð¿Ð»Ð°Ð½ÐµÑ‚Ñ‹:" << dp[i].planet.name << endl;
+			cout << "Ð’Ð¾Ð·Ñ€Ð°ÑÑ‚:" << dp[i].planet.age << endl;
+			cout << "Ð’ÐµÑ:" << dp[i].planet.weight << endl;
 		}
 	}
 }
@@ -193,17 +194,17 @@ void SPoiskAge(Systema* ds, int n)
 {
 	Stars star;
 
-	cout << "Ââåäèòå äàííûå çâåçäû: " << endl;
-	cout << "Ââåäèòå  âîçðàñò çâåçäû" << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð·Ð²ÐµÐ·Ð´Ñ‹: " << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ  Ð²Ð¾Ð·Ñ€Ð°ÑÑ‚ Ð·Ð²ÐµÐ·Ð´Ñ‹" << endl;
 	cin >> star.age;
 	for (int i = 0; i < n; i++)
 	{
 		if (ds[i].star.age == star.age)
 		{
-			cout << "Íàçâàíèå çâåçäû:" << ds[i].star.name << endl;
-			cout << "Âîçðàñò:" << ds[i].star.age << endl;
-			cout << "Âåñ:" << ds[i].star.weight << endl;
-			cout << "Ñâåòèìîñòü:" << ds[i].star.luminosity << endl;
+			cout << "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð·Ð²ÐµÐ·Ð´Ñ‹:" << ds[i].star.name << endl;
+			cout << "Ð’Ð¾Ð·Ñ€Ð°ÑÑ‚:" << ds[i].star.age << endl;
+			cout << "Ð’ÐµÑ:" << ds[i].star.weight << endl;
+			cout << "Ð¡Ð²ÐµÑ‚Ð¸Ð¼Ð¾ÑÑ‚ÑŒ:" << ds[i].star.luminosity << endl;
 		}
 
 	}
@@ -215,16 +216,16 @@ void PPoiskWeight(Systema* dp, int n)
 {
 	Planets planet;
 
-	cout << "Ââåäèòå äàííûå ïëàíåòû: " << endl;
-	cout << "Ââåäèòå ìàññó ïëàíåòû" << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð¿Ð»Ð°Ð½ÐµÑ‚Ñ‹: " << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¼Ð°ÑÑÑƒ Ð¿Ð»Ð°Ð½ÐµÑ‚Ñ‹" << endl;
 	cin >> planet.weight;
 	for (int i = 0; i < n; i++)
 	{
 		if (dp[i].planet.weight == planet.weight)
 		{
-			cout << "Íàçâàíèå ïëàíåòû:" << dp[i].planet.name << endl;
-			cout << "Âîçðàñò:" << dp[i].planet.age << endl;
-			cout << "Âåñ:" << dp[i].planet.weight << endl;
+			cout << "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð¿Ð»Ð°Ð½ÐµÑ‚Ñ‹:" << dp[i].planet.name << endl;
+			cout << "Ð’Ð¾Ð·Ñ€Ð°ÑÑ‚:" << dp[i].planet.age << endl;
+			cout << "Ð’ÐµÑ:" << dp[i].planet.weight << endl;
 		}
 	}
 }
@@ -233,17 +234,17 @@ void SPoiskWeight(Systema* ds, int n)
 {
 	Stars star;
 
-	cout << "Ââåäèòå äàííûå çâåçäû: " << endl;
-	cout << "Ââåäèòå ìàññó çâåçäû" << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð·Ð²ÐµÐ·Ð´Ñ‹: " << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¼Ð°ÑÑÑƒ Ð·Ð²ÐµÐ·Ð´Ñ‹" << endl;
 	cin >> star.weight;
 	for (int i = 0; i < n; i++)
 	{
 		if (ds[i].star.weight == star.weight)
 		{
-			cout << "Íàçâàíèå çâåçäû:" << ds[i].star.name << endl;
-			cout << "Âîçðàñò:" << ds[i].star.age << endl;
-			cout << "Âåñ:" << ds[i].star.weight << endl;
-			cout << "Ñâåòèìîñòü:" << ds[i].star.luminosity << endl;
+			cout << "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð·Ð²ÐµÐ·Ð´Ñ‹:" << ds[i].star.name << endl;
+			cout << "Ð’Ð¾Ð·Ñ€Ð°ÑÑ‚:" << ds[i].star.age << endl;
+			cout << "Ð’ÐµÑ:" << ds[i].star.weight << endl;
+			cout << "Ð¡Ð²ÐµÑ‚Ð¸Ð¼Ð¾ÑÑ‚ÑŒ:" << ds[i].star.luminosity << endl;
 		}
 
 	}
@@ -253,17 +254,17 @@ void SPoiskLuminosity(Systema* ds, int n)
 {
 	Stars star;
 
-	cout << "Ââåäèòå äàííûå çâåçäû: " << endl;
-	cout << "Ââåäèòå Ñâåòèìîñòü çâåçäû" << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð·Ð²ÐµÐ·Ð´Ñ‹: " << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¡Ð²ÐµÑ‚Ð¸Ð¼Ð¾ÑÑ‚ÑŒ Ð·Ð²ÐµÐ·Ð´Ñ‹" << endl;
 	cin >> star.luminosity;
 	for (int i = 0; i < n; i++)
 	{
 		if (ds[i].star.luminosity == star.luminosity)
 		{
-			cout << "Íàçâàíèå çâåçäû:" << ds[i].star.name << endl;
-			cout << "Âîçðàñò:" << ds[i].star.age << endl;
-			cout << "Âåñ:" << ds[i].star.weight << endl;
-			cout << "Ñâåòèìîñòü:" << ds[i].star.luminosity << endl;
+			cout << "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð·Ð²ÐµÐ·Ð´Ñ‹:" << ds[i].star.name << endl;
+			cout << "Ð’Ð¾Ð·Ñ€Ð°ÑÑ‚:" << ds[i].star.age << endl;
+			cout << "Ð’ÐµÑ:" << ds[i].star.weight << endl;
+			cout << "Ð¡Ð²ÐµÑ‚Ð¸Ð¼Ð¾ÑÑ‚ÑŒ:" << ds[i].star.luminosity << endl;
 		}
 
 	}

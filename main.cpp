@@ -1,5 +1,6 @@
 ﻿#include "functions.h"
 
+
 int num;
 void menu()
 {

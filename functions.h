@@ -2,6 +2,7 @@
 #include "systema.h"
 
 
+
 void PrintP(Systema* dp, int n);
 void PrintS(Systema* ds, int n);
 void ChangeP(Systema* dp, int n);

@@ -1,4 +1,5 @@
 #include "systema.h"
+
 Systema::Systema()
 {
 	star.age = 0;
